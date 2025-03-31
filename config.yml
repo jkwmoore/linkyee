@@ -53,11 +53,11 @@ links:
       title: "JKWMoore's Blog"
       target: "_blank"
   - link:
-      icon: "fa-solid fa-rss"
-      text: "Website"
-      url: "https://zhgchg.li/"
-      alt: "ZhgChgLi's Website"
-      title: "ZhgChgLi's Website"
+      icon: "fa-solid fa-server"
+      text: "HPC @ Sheffield University"
+      url: "https://docs.hpc.shef.ac.uk/en/latest/"
+      alt: "HPC @ Sheffield University"
+      title: "HPC @ Sheffield University"
       target: "_blank"
 
 
