@@ -35,7 +35,7 @@ name: "@jkwmoore"
 
 # Tagline section text
 tagline: >-
-    Senior Research Platforms Engineer at IT Services - University of Sheffield
+    A HPC Engineer at X-ISS
 
 # List of links
 # icon: Use Font Awesome icons (https://fontawesome.com/search?o=r&m=free)
@@ -54,10 +54,10 @@ links:
       target: "_blank"
   - link:
       icon: "fa-solid fa-server"
-      text: "HPC @ Sheffield University"
-      url: "https://docs.hpc.shef.ac.uk/en/latest/"
-      alt: "HPC @ Sheffield University"
-      title: "HPC @ Sheffield University"
+      text: "HPC @ X-ISS"
+      url: "https://x-iss.com/"
+      alt: "HPC @ X-ISS"
+      title: "HPC @ X-ISS"
       target: "_blank"
 
 
