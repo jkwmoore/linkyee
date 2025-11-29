@@ -171,3 +171,42 @@ a {
     color: #8b949e;
   }
 }
+
+/* --- CSS for QR code and the Toggle Effect --- */
+
+.hidden {
+    display: none;
+}
+
+/* Optional: Add some styling to the button to make it look good */
+#qr-toggle-button {
+    border:none;
+}
+
+.qr-code-section {
+    /* Base styles */
+    padding: 0 10px; /* Adjust vertical padding later to avoid transition flicker */
+    border-radius: 8px;
+    text-align: center;
+    
+    /* Transition Properties: */
+    max-height: 0; 
+    overflow: hidden; /* Hides content when max-height is 0 */
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, border 0.3s ease-in-out; 
+}
+
+/* This is the state when the content is visible/unfurled */
+#qr-container:not(.hidden) {
+    max-height: 500px; /* Needs to be larger than the content's actual height */
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    border-color: #ccc; /* Makes the border appear smoothly */
+}
+
+/* Ensure the SVG is centered and sized correctly */
+.qr-code-section svg {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px; /* Sets max size for the SVG */
+    height: auto;
+}
