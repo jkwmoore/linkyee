@@ -15,11 +15,11 @@ plugins:
   #- MediumFollowersCountPlugin:
   #    username: zhgchgli
   # Automatically fetch Github repo star count
-  - GithubRepoStarsCountPlugin:
-      - ZhgChgLi/ZMarkupParser
-      - ZhgChgLi/ZReviewTender
-      - ZhgChgLi/ZMediumToMarkdown
-      - ZhgChgLi/linkyee
+  #- GithubRepoStarsCountPlugin:
+  #    - ZhgChgLi/ZMarkupParser
+  #    - ZhgChgLi/ZReviewTender
+  #    - ZhgChgLi/ZMediumToMarkdown
+  #    - ZhgChgLi/linkyee
 
 # Google Analytics tracking id
 google_analytics_id:
@@ -35,7 +35,7 @@ name: "@jkwmoore"
 
 # Tagline section text
 tagline: >-
-    A HPC Engineer at X-ISS / NAG
+    HPC Linux Operations Engineer at Jump Trading
 
 # List of links
 # icon: Use Font Awesome icons (https://fontawesome.com/search?o=r&m=free)
@@ -54,10 +54,10 @@ links:
       target: "_blank"
   - link:
       icon: "fa-solid fa-server"
-      text: "HPC @ X-ISS"
-      url: "https://x-iss.com/"
-      alt: "HPC @ X-ISS"
-      title: "HPC @ X-ISS"
+      text: "HPC @ Jump Trading"
+      url: "https://www.jumptrading.com/"
+      alt: "HPC @ Jump Trading"
+      title: "HPC @ Jump Trading"
       target: "_blank"
 
 
