@@ -1,18 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('qr-toggle-button');
-    const qrContainer = document.getElementById('qr-container');
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.getElementById('qr-toggle-button');
+  const qrContainer = document.getElementById('qr-container');
 
-    if (toggleButton && qrContainer) {
-        toggleButton.addEventListener('click', function() {
-            // Toggles the 'hidden' class, which triggers the CSS max-height transition
-            qrContainer.classList.toggle('hidden');
+  if (!toggleButton || !qrContainer) {
+    return;
+  }
 
-            // Update button text
-            if (qrContainer.classList.contains('hidden')) {
-                toggleButton.innerHTML = '<i class="fas fa-qrcode"></i> Show QR Code Link to this page';
-            } else {
-                toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i> Hide QR Code Link to this page';
-            }
-        });
+  // Ensure initial state is closed without flashing on load
+  qrContainer.classList.add('hidden');
+  toggleButton.setAttribute('aria-expanded', 'false');
+
+  toggleButton.addEventListener('click', function () {
+    const isOpening = qrContainer.classList.contains('hidden');
+
+    qrContainer.classList.toggle('hidden', !isOpening);
+    qrContainer.classList.toggle('is-open', isOpening);
+    toggleButton.setAttribute('aria-expanded', String(isOpening));
+
+    const labelEl = toggleButton.querySelector('span');
+    if (labelEl) {
+      labelEl.textContent = isOpening
+        ? 'Hide QR code link to this page'
+        : 'Show QR code link to this page';
     }
+
+    const iconEl = toggleButton.querySelector('i, svg');
+    if (iconEl && iconEl.tagName.toLowerCase() === 'i') {
+      iconEl.className = isOpening ? 'fas fa-eye-slash' : 'fas fa-qrcode';
+    }
+  });
 });
