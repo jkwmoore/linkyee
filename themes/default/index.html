@@ -2,19 +2,15 @@
 <html lang="{{ lang }}">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>{{ title }}</title>
 
-  <meta charset="UTF-8">
-  <meta name="last-modified" content="{{ last_modified_at }}">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta
-    name="viewport"
-    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  <meta name="last-modified" content="{{ last_modified_at }}" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <meta property="og:title" content="{{ title }}" />
   <meta name="author" content="{{ name }}" />
@@ -25,28 +21,27 @@
   <meta property="og:image" content="{{ avatar }}" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="twitter:image" content="{{ avatar }}" />
-  <meta property="twitter:title" content="{{ title }}" />
+  <meta name="twitter:image" content="{{ avatar }}" />
+  <meta name="twitter:title" content="{{ title }}" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png">
-  <link rel="manifest" href="./images/favicons/site.webmanifest">
-  <link rel="shortcut icon" href="./images/favicons/favicon.ico">
-  <meta name="apple-mobile-web-app-title" content="{{ title }}">
-  <meta name="application-name" content="{{ title }}">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="./images/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="fediverse:creator" content="@jkwmoore@mast.hpc.social">
-  <a rel="me" href="https://mast.hpc.social/@jkwmoore" style="display: none;"></a>
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png" />
+  <link rel="manifest" href="./images/favicons/site.webmanifest" />
+  <link rel="shortcut icon" href="./images/favicons/favicon.ico" />
+  <link rel="me" href="https://mast.hpc.social/@jkwmoore" />
+  <meta name="apple-mobile-web-app-title" content="{{ title }}" />
+  <meta name="application-name" content="{{ title }}" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="msapplication-config" content="./images/favicons/browserconfig.xml" />
+  <meta name="fediverse:creator" content="@jkwmoore@mast.hpc.social" />
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="container">
     <div class="profile">
-      <img src="{{ avatar }}" alt="Profile Picture" class="profile-pic" />
+      <img src="{{ avatar }}" alt="{{ name }} profile picture" class="profile-pic" />
       <h1 class="name">{{ name }}</h1>
       <p class="description">{{ tagline }}</p>
     </div>
@@ -54,42 +49,28 @@
     <div class="links">
       {% for item in links %}
         {% assign link = item.link %}
-        <a href="{{ link.url }}" target="{{ link.target }}" class="link-button" alt="{{ link.alt }}" title="{{ link.title }}">
-          <i class="{{ link.icon }}"></i> {{ link.text }}
+        <a href="{{ link.url }}" target="{{ link.target }}" class="link-button" title="{{ link.title }}">
+          <i class="{{ link.icon }}" aria-hidden="true"></i>
+          <span>{{ link.text }}</span>
         </a>
       {% endfor %}
-        <button id="qr-toggle-button" class="link-button"><i class="fas fa-qrcode"></i> Show QR code link to this page</button>
-        <div id="qr-container" class="qr-code-section hidden">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
-	
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="60" height="60" viewBox="0 0 2000 2000" x="0" y="0" shape-rendering="crispEdges"><defs></defs><rect x="0" y="0" width="2000" height="2000" fill="#ffffff"></rect><rect x="712" y="200" width="64" height="64" fill="#000000"></rect><rect x="776" y="200" width="64" height="64" fill="#000000"></rect><rect x="1096" y="200" width="64" height="64" fill="#000000"></rect><rect x="1224" y="200" width="64" height="64" fill="#000000"></rect><rect x="1032" y="264" width="64" height="64" fill="#000000"></rect><rect x="1224" y="264" width="64" height="64" fill="#000000"></rect><rect x="712" y="328" width="64" height="64" fill="#000000"></rect><rect x="904" y="328" width="64" height="64" fill="#000000"></rect><rect x="968" y="328" width="64" height="64" fill="#000000"></rect><rect x="1160" y="328" width="64" height="64" fill="#000000"></rect><rect x="712" y="392" width="64" height="64" fill="#000000"></rect><rect x="776" y="392" width="64" height="64" fill="#000000"></rect><rect x="904" y="392" width="64" height="64" fill="#000000"></rect><rect x="968" y="392" width="64" height="64" fill="#000000"></rect><rect x="1096" y="392" width="64" height="64" fill="#000000"></rect><rect x="1160" y="392" width="64" height="64" fill="#000000"></rect><rect x="1224" y="392" width="64" height="64" fill="#000000"></rect><rect x="712" y="456" width="64" height="64" fill="#000000"></rect><rect x="776" y="456" width="64" height="64" fill="#000000"></rect><rect x="840" y="456" width="64" height="64" fill="#000000"></rect><rect x="904" y="456" width="64" height="64" fill="#000000"></rect><rect x="1160" y="456" width="64" height="64" fill="#000000"></rect><rect x="776" y="520" width="64" height="64" fill="#000000"></rect><rect x="1096" y="520" width="64" height="64" fill="#000000"></rect><rect x="1160" y="520" width="64" height="64" fill="#000000"></rect><rect x="1224" y="520" width="64" height="64" fill="#000000"></rect><rect x="712" y="584" width="64" height="64" fill="#000000"></rect><rect x="840" y="584" width="64" height="64" fill="#000000"></rect><rect x="968" y="584" width="64" height="64" fill="#000000"></rect><rect x="1096" y="584" width="64" height="64" fill="#000000"></rect><rect x="1224" y="584" width="64" height="64" fill="#000000"></rect><rect x="776" y="648" width="64" height="64" fill="#000000"></rect><rect x="904" y="648" width="64" height="64" fill="#000000"></rect><rect x="1032" y="648" width="64" height="64" fill="#000000"></rect><rect x="1096" y="648" width="64" height="64" fill="#000000"></rect><rect x="1160" y="648" width="64" height="64" fill="#000000"></rect><rect x="1224" y="648" width="64" height="64" fill="#000000"></rect><rect x="200" y="712" width="64" height="64" fill="#000000"></rect><rect x="264" y="712" width="64" height="64" fill="#000000"></rect><rect x="328" y="712" width="64" height="64" fill="#000000"></rect><rect x="392" y="712" width="64" height="64" fill="#000000"></rect><rect x="584" y="712" width="64" height="64" fill="#000000"></rect><rect x="712" y="712" width="64" height="64" fill="#000000"></rect><rect x="968" y="712" width="64" height="64" fill="#000000"></rect><rect x="1096" y="712" width="64" height="64" fill="#000000"></rect><rect x="1224" y="712" width="64" height="64" fill="#000000"></rect><rect x="1288" y="712" width="64" height="64" fill="#000000"></rect><rect x="1480" y="712" width="64" height="64" fill="#000000"></rect><rect x="1544" y="712" width="64" height="64" fill="#000000"></rect><rect x="1608" y="712" width="64" height="64" fill="#000000"></rect><rect x="1736" y="712" width="64" height="64" fill="#000000"></rect><rect x="264" y="776" width="64" height="64" fill="#000000"></rect><rect x="392" y="776" width="64" height="64" fill="#000000"></rect><rect x="456" y="776" width="64" height="64" fill="#000000"></rect><rect x="520" y="776" width="64" height="64" fill="#000000"></rect><rect x="712" y="776" width="64" height="64" fill="#000000"></rect><rect x="776" y="776" width="64" height="64" fill="#000000"></rect><rect x="904" y="776" width="64" height="64" fill="#000000"></rect><rect x="1096" y="776" width="64" height="64" fill="#000000"></rect><rect x="1288" y="776" width="64" height="64" fill="#000000"></rect><rect x="1416" y="776" width="64" height="64" fill="#000000"></rect><rect x="1480" y="776" width="64" height="64" fill="#000000"></rect><rect x="1736" y="776" width="64" height="64" fill="#000000"></rect><rect x="200" y="840" width="64" height="64" fill="#000000"></rect><rect x="456" y="840" width="64" height="64" fill="#000000"></rect><rect x="520" y="840" width="64" height="64" fill="#000000"></rect><rect x="584" y="840" width="64" height="64" fill="#000000"></rect><rect x="648" y="840" width="64" height="64" fill="#000000"></rect><rect x="712" y="840" width="64" height="64" fill="#000000"></rect><rect x="1032" y="840" width="64" height="64" fill="#000000"></rect><rect x="1160" y="840" width="64" height="64" fill="#000000"></rect><rect x="1544" y="840" width="64" height="64" fill="#000000"></rect><rect x="1608" y="840" width="64" height="64" fill="#000000"></rect><rect x="1672" y="840" width="64" height="64" fill="#000000"></rect><rect x="1736" y="840" width="64" height="64" fill="#000000"></rect><rect x="264" y="904" width="64" height="64" fill="#000000"></rect><rect x="328" y="904" width="64" height="64" fill="#000000"></rect><rect x="648" y="904" width="64" height="64" fill="#000000"></rect><rect x="904" y="904" width="64" height="64" fill="#000000"></rect><rect x="1160" y="904" width="64" height="64" fill="#000000"></rect><rect x="1352" y="904" width="64" height="64" fill="#000000"></rect><rect x="1416" y="904" width="64" height="64" fill="#000000"></rect><rect x="1544" y="904" width="64" height="64" fill="#000000"></rect><rect x="1608" y="904" width="64" height="64" fill="#000000"></rect><rect x="1736" y="904" width="64" height="64" fill="#000000"></rect><rect x="200" y="968" width="64" height="64" fill="#000000"></rect><rect x="328" y="968" width="64" height="64" fill="#000000"></rect><rect x="392" y="968" width="64" height="64" fill="#000000"></rect><rect x="456" y="968" width="64" height="64" fill="#000000"></rect><rect x="584" y="968" width="64" height="64" fill="#000000"></rect><rect x="648" y="968" width="64" height="64" fill="#000000"></rect><rect x="712" y="968" width="64" height="64" fill="#000000"></rect><rect x="776" y="968" width="64" height="64" fill="#000000"></rect><rect x="968" y="968" width="64" height="64" fill="#000000"></rect><rect x="1032" y="968" width="64" height="64" fill="#000000"></rect><rect x="1096" y="968" width="64" height="64" fill="#000000"></rect><rect x="1160" y="968" width="64" height="64" fill="#000000"></rect><rect x="1288" y="968" width="64" height="64" fill="#000000"></rect><rect x="1416" y="968" width="64" height="64" fill="#000000"></rect><rect x="1480" y="968" width="64" height="64" fill="#000000"></rect><rect x="1544" y="968" width="64" height="64" fill="#000000"></rect><rect x="1672" y="968" width="64" height="64" fill="#000000"></rect><rect x="1736" y="968" width="64" height="64" fill="#000000"></rect><rect x="456" y="1032" width="64" height="64" fill="#000000"></rect><rect x="840" y="1032" width="64" height="64" fill="#000000"></rect><rect x="968" y="1032" width="64" height="64" fill="#000000"></rect><rect x="1160" y="1032" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1032" width="64" height="64" fill="#000000"></rect><rect x="1288" y="1032" width="64" height="64" fill="#000000"></rect><rect x="1416" y="1032" width="64" height="64" fill="#000000"></rect><rect x="1544" y="1032" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1032" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1032" width="64" height="64" fill="#000000"></rect><rect x="264" y="1096" width="64" height="64" fill="#000000"></rect><rect x="328" y="1096" width="64" height="64" fill="#000000"></rect><rect x="456" y="1096" width="64" height="64" fill="#000000"></rect><rect x="584" y="1096" width="64" height="64" fill="#000000"></rect><rect x="712" y="1096" width="64" height="64" fill="#000000"></rect><rect x="776" y="1096" width="64" height="64" fill="#000000"></rect><rect x="840" y="1096" width="64" height="64" fill="#000000"></rect><rect x="968" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1160" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1288" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1416" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1544" y="1096" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1096" width="64" height="64" fill="#000000"></rect><rect x="200" y="1160" width="64" height="64" fill="#000000"></rect><rect x="328" y="1160" width="64" height="64" fill="#000000"></rect><rect x="392" y="1160" width="64" height="64" fill="#000000"></rect><rect x="648" y="1160" width="64" height="64" fill="#000000"></rect><rect x="776" y="1160" width="64" height="64" fill="#000000"></rect><rect x="904" y="1160" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1160" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1160" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1160" width="64" height="64" fill="#000000"></rect><rect x="328" y="1224" width="64" height="64" fill="#000000"></rect><rect x="392" y="1224" width="64" height="64" fill="#000000"></rect><rect x="520" y="1224" width="64" height="64" fill="#000000"></rect><rect x="584" y="1224" width="64" height="64" fill="#000000"></rect><rect x="648" y="1224" width="64" height="64" fill="#000000"></rect><rect x="712" y="1224" width="64" height="64" fill="#000000"></rect><rect x="776" y="1224" width="64" height="64" fill="#000000"></rect><rect x="904" y="1224" width="64" height="64" fill="#000000"></rect><rect x="968" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1032" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1288" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1352" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1416" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1224" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1224" width="64" height="64" fill="#000000"></rect><rect x="712" y="1288" width="64" height="64" fill="#000000"></rect><rect x="776" y="1288" width="64" height="64" fill="#000000"></rect><rect x="968" y="1288" width="64" height="64" fill="#000000"></rect><rect x="1032" y="1288" width="64" height="64" fill="#000000"></rect><rect x="1160" y="1288" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1288" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1288" width="64" height="64" fill="#000000"></rect><rect x="1544" y="1288" width="64" height="64" fill="#000000"></rect><rect x="1608" y="1288" width="64" height="64" fill="#000000"></rect><rect x="776" y="1352" width="64" height="64" fill="#000000"></rect><rect x="968" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1032" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1352" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1608" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1352" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1352" width="64" height="64" fill="#000000"></rect><rect x="776" y="1416" width="64" height="64" fill="#000000"></rect><rect x="840" y="1416" width="64" height="64" fill="#000000"></rect><rect x="968" y="1416" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1416" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1416" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1416" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1416" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1416" width="64" height="64" fill="#000000"></rect><rect x="776" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1032" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1160" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1288" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1352" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1416" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1608" y="1480" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1480" width="64" height="64" fill="#000000"></rect><rect x="712" y="1544" width="64" height="64" fill="#000000"></rect><rect x="776" y="1544" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1544" width="64" height="64" fill="#000000"></rect><rect x="1160" y="1544" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1544" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1544" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1544" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1544" width="64" height="64" fill="#000000"></rect><rect x="712" y="1608" width="64" height="64" fill="#000000"></rect><rect x="840" y="1608" width="64" height="64" fill="#000000"></rect><rect x="904" y="1608" width="64" height="64" fill="#000000"></rect><rect x="1032" y="1608" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1608" width="64" height="64" fill="#000000"></rect><rect x="1160" y="1608" width="64" height="64" fill="#000000"></rect><rect x="1544" y="1608" width="64" height="64" fill="#000000"></rect><rect x="1608" y="1608" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1608" width="64" height="64" fill="#000000"></rect><rect x="712" y="1672" width="64" height="64" fill="#000000"></rect><rect x="776" y="1672" width="64" height="64" fill="#000000"></rect><rect x="840" y="1672" width="64" height="64" fill="#000000"></rect><rect x="904" y="1672" width="64" height="64" fill="#000000"></rect><rect x="968" y="1672" width="64" height="64" fill="#000000"></rect><rect x="1288" y="1672" width="64" height="64" fill="#000000"></rect><rect x="1480" y="1672" width="64" height="64" fill="#000000"></rect><rect x="1608" y="1672" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1672" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1672" width="64" height="64" fill="#000000"></rect><rect x="712" y="1736" width="64" height="64" fill="#000000"></rect><rect x="840" y="1736" width="64" height="64" fill="#000000"></rect><rect x="968" y="1736" width="64" height="64" fill="#000000"></rect><rect x="1032" y="1736" width="64" height="64" fill="#000000"></rect><rect x="1096" y="1736" width="64" height="64" fill="#000000"></rect><rect x="1224" y="1736" width="64" height="64" fill="#000000"></rect><rect x="1608" y="1736" width="64" height="64" fill="#000000"></rect><rect x="1672" y="1736" width="64" height="64" fill="#000000"></rect><rect x="1736" y="1736" width="64" height="64" fill="#000000"></rect><svg version="1.1" id="Ebene_1" x="200" y="200" width="448" height="448" viewBox="0 0 699.988 699.986" enable-background="new 0 0 699.988 699.986" xml:space="preserve" shape-rendering="auto">
-<path fill="#000000" d="M600.99,0h-100h-99.997h-0.001h-99.997h-99.998h-99.998H1v99.998v99.998v99.998v99.999v99.997v99.998v99.998  h99.999h99.998h99.998h99.997h0.001h99.997h100h99.998v-99.998V499.99v-99.997v-99.999v-99.998V99.998V0H600.99z M600.99,199.996  v99.998v99.999v99.997v99.998h-100h-99.997h-0.001h-99.997h-99.998h-99.998V499.99v-99.997v-99.999v-99.998V99.998h99.998h99.998  h99.997h0.001h99.997h100V199.996z"></path>
-</svg>
-<svg version="1.0" id="Ebene_1" x="200" y="200" width="448" height="448" viewBox="0 0 699.988 699.988" enable-background="new 0 0 699.988 699.988" xml:space="preserve" shape-rendering="auto">
-<polygon fill="#000000" points="399.994,199.997 399.992,199.997 299.996,199.997 199.998,199.997 199.998,299.994 199.998,399.994   199.998,499.991 299.996,499.991 399.992,499.991 399.994,499.991 499.99,499.991 499.99,399.994 499.99,299.994 499.99,199.997 "></polygon>
-</svg>
-<svg version="1.1" id="Ebene_1" x="1352" y="200" width="448" height="448" viewBox="0 0 699.988 699.986" enable-background="new 0 0 699.988 699.986" xml:space="preserve" shape-rendering="auto">
-<path fill="#000000" d="M600.99,0h-100h-99.997h-0.001h-99.997h-99.998h-99.998H1v99.998v99.998v99.998v99.999v99.997v99.998v99.998  h99.999h99.998h99.998h99.997h0.001h99.997h100h99.998v-99.998V499.99v-99.997v-99.999v-99.998V99.998V0H600.99z M600.99,199.996  v99.998v99.999v99.997v99.998h-100h-99.997h-0.001h-99.997h-99.998h-99.998V499.99v-99.997v-99.999v-99.998V99.998h99.998h99.998  h99.997h0.001h99.997h100V199.996z"></path>
-</svg>
-<svg version="1.0" id="Ebene_1" x="1352" y="200" width="448" height="448" viewBox="0 0 699.988 699.988" enable-background="new 0 0 699.988 699.988" xml:space="preserve" shape-rendering="auto">
-<polygon fill="#000000" points="399.994,199.997 399.992,199.997 299.996,199.997 199.998,199.997 199.998,299.994 199.998,399.994   199.998,499.991 299.996,499.991 399.992,499.991 399.994,499.991 499.99,499.991 499.99,399.994 499.99,299.994 499.99,199.997 "></polygon>
-</svg>
-<svg version="1.1" id="Ebene_1" x="200" y="1352" width="448" height="448" viewBox="0 0 699.988 699.986" enable-background="new 0 0 699.988 699.986" xml:space="preserve" shape-rendering="auto">
-<path fill="#000000" d="M600.99,0h-100h-99.997h-0.001h-99.997h-99.998h-99.998H1v99.998v99.998v99.998v99.999v99.997v99.998v99.998  h99.999h99.998h99.998h99.997h0.001h99.997h100h99.998v-99.998V499.99v-99.997v-99.999v-99.998V99.998V0H600.99z M600.99,199.996  v99.998v99.999v99.997v99.998h-100h-99.997h-0.001h-99.997h-99.998h-99.998V499.99v-99.997v-99.999v-99.998V99.998h99.998h99.998  h99.997h0.001h99.997h100V199.996z"></path>
-</svg>
-<svg version="1.0" id="Ebene_1" x="200" y="1352" width="448" height="448" viewBox="0 0 699.988 699.988" enable-background="new 0 0 699.988 699.988" xml:space="preserve" shape-rendering="auto">
-<polygon fill="#000000" points="399.994,199.997 399.992,199.997 299.996,199.997 199.998,199.997 199.998,299.994 199.998,399.994   199.998,499.991 299.996,499.991 399.992,499.991 399.994,499.991 499.99,499.991 499.99,399.994 499.99,299.994 499.99,199.997 "></polygon>
-</svg>
-</svg>
-</svg></div>
+
+      <button type="button" id="qr-toggle-button" class="link-button" aria-expanded="false" aria-controls="qr-container">
+        <i class="fas fa-qrcode" aria-hidden="true"></i>
+        <span>Show QR code link to this page</span>
+      </button>
+
+      <div id="qr-container" class="qr-code-section hidden">
+        <!-- Keep a single clean QR <svg viewBox="0 0 2000 2000"> here without nested <svg> tags -->
+      </div>
     </div>
-    
+
     <div class="button-container">
       <div class="button-group">
         {% for item in socials %}
           {% assign social = item.social %}
-          <a href="{{ social.url }}" title="{{ social.title }}" target="{{ social.target }}" class="icon-button" alt="{{ social.alt }}">
-            <i class="{{ social.icon }}"></i>
+          <a href="{{ social.url }}" title="{{ social.title }}" aria-label="{{ social.title }}" target="{{ social.target }}" class="icon-button">
+            <i class="{{ social.icon }}" aria-hidden="true"></i>
           </a>
         {% endfor %}
       </div>
@@ -100,7 +81,8 @@
       <div class="copyright">{{ copyright }}</div>
     </footer>
   </div>
-  <script src="fontawesome/js/all.js" data-auto-replace-svg="nest"></script>
+
+  <script src="fontawesome/js/all.js" data-auto-replace-svg="nest" defer></script>
   {% if google_analytics_id %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
@@ -108,10 +90,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', '{{ google_analytics_id }}');
     </script>
   {% endif %}
-  <script src="./scripts.js"></script>
+  <script src="./scripts.js" defer></script>
 </body>
 </html>
